@@ -10,7 +10,8 @@ const app = Vue.createApp({
             variants: [
               { id: 2234, color: 'green', image: './assets/images/socks_green.jpg' },
               { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg' },
-            ]
+            ],
+            onSale: true
         }
     },
     methods: {
@@ -19,6 +20,11 @@ const app = Vue.createApp({
         },
         updateImage(variantImage) {
             this.image = variantImage
+        }
+    },
+    computed: {
+        sale() {
+            return this.brand + ' ' + this.product + ' ' + 'is on sale'
         }
     }
 })
